@@ -1,0 +1,19 @@
+import {defineConfig} from 'vite';
+
+export default defineConfig( {
+  build: {
+    lib: {
+      entry: 'src/main.ts',
+      fileName: () => 'main.js',
+      formats: ['cjs'],
+    },
+    rollupOptions: {
+      
+      external: ['better-sqlite3', 'electron'], 
+    },
+  },
+  resolve: {
+    
+    mainFields: ['module', 'jsnext:main', 'jsnext'],
+  },
+});
